@@ -1,0 +1,5 @@
+id,id_buku,pengguna,status,tanggal
+1,1,kian,Pinjam,2025-07-12 19:57:27
+1,1,kian,Kembali,2025-07-12 19:57:41
+2,2,lia,Pinjam,2025-07-12 20:00:31
+2,2,kia,Kembali,2025-07-12 20:01:33
