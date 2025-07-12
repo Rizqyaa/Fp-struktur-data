@@ -189,7 +189,7 @@ def menu_utama():
         print("3. Perbarui Buku")
         print("4. Hapus Buku")
         print("5. Pinjam Buku")
-        print("6. Kembalikan Buku")
+        print("6. Pengembalian Buku")
         print("7. Lihat History Peminjaman")
         print("8. Keluar")
         
