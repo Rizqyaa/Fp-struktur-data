@@ -152,7 +152,7 @@ def catat_riwayat(buku_id, pengguna, status):
     with open(FILE_RIWAYAT, 'a', newline='') as file:
         writer = csv.writer(file)
         waktu_sekarang = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        writer.writerow([buku_id, buku_id, pengguna, status, waktu_sekarang])
+        writer.writerow([buku_id, pengguna, status, waktu_sekarang])
 
 def lihat_riwayat():
     """Menampilkan history peminjaman"""
@@ -161,14 +161,14 @@ def lihat_riwayat():
     try:
         with open(FILE_RIWAYAT, mode='r') as file:
             reader = csv.DictReader(file)
-            print("{:<5} {:<30} {:<15} {:<10} {:<20}".format('ID', 'Judul Buku', 'Peminjam', 'status', 'Tanggal'))
-            print("="*100)
+            print("{:<30} {:<15} {:<10} {:<20}".format('Judul Buku', 'Peminjam', 'status', 'Tanggal'))
+            print("="*80)
             
             for row in reader:
                 buku = cari_buku_by_id(row['id_buku'])
                 judul = buku['judul'] if buku else "-"
-                print("{:<5} {:<30} {:<15} {:<10} {:<20}".format( 
-                    row['id_buku'], judul, row['pengguna'], row['status'], row['tanggal']))
+                print("{:<30} {:<15} {:<10} {:<20}".format( 
+                    judul, row['pengguna'], row['status'], row['tanggal']))
     except FileNotFoundError:
         print("Belum ada history peminjaman")
 
